@@ -1,5 +1,5 @@
 /**
- * Duel Fight Game - FINISHED
+ * Duel Fight Game -
  * Date: 4/09/13
 
  Assignment 1
