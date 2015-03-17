@@ -1,4 +1,4 @@
- /*
+/*
     PWA1: Goal 4: Course Material 4
 
 	1. Objects
@@ -30,13 +30,7 @@ console.log('------Objects ----------');
 
 //{KEY : Value} pairings,
 
-	person = 
-		{
-			'name': "bond",
-			'age': 35,
-			'secretAgent': true	
-		};
-	
+
 
 /* accessing object properties
      - below are 3 ways you can access the property information in an object
@@ -47,22 +41,14 @@ console.log('------Objects ----------');
      - also keep in mind that since the keys can be strings, you could access the keys using string variables
  */
 
-	var personAge = 'age';
-	console.log(person.name, person[personAge], person['secretAgent']);
 
 // setter
 
-	person['age'] = '40';
-	person.name = 'James Bond';
-	person.height = 5;
-	
-	console.log(person);
+
 
 //nested objects
 
-	person = {birthday: {month: 12, day: 2}, name: 'Bond'};
-	console.log(person['birthday']['month']);
-	console.log(person.birthday.month, person.name);
+
 
 //---------------------------------------------
 
@@ -70,28 +56,7 @@ console.log('------Objects ----------');
 
 console.log('------Object within an object, Arrays, Function ----------');
 
-	var thatGuy = 
-		{
-			name: 'James Bond',
-			course: 'PWA1',
-			address: 
-			{
-				num: 3300,
-				street: 'University Blvd',
-				city: 'Orlando',
-				cornerOf: ['University', 'Semoran']
-				
-			},
-			
-			showMyAddress: function()
-				{
-					var x = this.address.street + ", " + this.address.city;
-					return x;	
-				}
-			
-		};
-		
-			console.log(thatGuy.showMyAddress());
+
 
 //properties & methods
 /*
@@ -105,18 +70,7 @@ console.log('------Objects - properties & methods ----------');
 
 //Method 1 "Basic"
 
-	var fsStudent = 	{}; //initialized variable
-	
-	fsStudent.age = 19; //set age property
-	fsStudent.career = 'web dev'; //set career property
-	
-	fsStudent.sayHello = function()//creates method say hello
-		{
-			console.log('Hello');	
-		};
-		
-		
-	
+
 
 
 // above, we first initialize the object, then we created 2 properties 
@@ -126,9 +80,7 @@ console.log('------Objects - properties & methods ----------');
 // we can also access the methods and properties of an object using  [ ] , 
 // 	by using their name as a string - all of the below are valid:
 
-	console.log('method 1');
-	
-		fsStudent.sayHello();	
+
 
 /* ===============================================================
 	The for-in object loop
@@ -140,18 +92,7 @@ console.log('------Objects - properties & methods ----------');
 */
     console.log("---------- Object - For In Loop ----------------");
 
-	var students = 
-		{
-			name: 'James Bond',
-			gender: 'Male',
-			job: 'spy'	
-		};
-		
-		for(var key in students)
-			{
-				console.log('Key names: ', key);
-				console.log('Value of key[' , key, ']: ', students[key]);	
-			}
+
 
 /*
 	===============================================
@@ -186,9 +127,7 @@ console.log('------Objects - properties & methods ----------');
 */
     console.log('------ Objects - Converting Datatypes ----------');
 
-	var myNum  = 1;
-		myString = String(myNum);
-		console.log(typeof myString);
+
 
 /*
 	- because these values act as objects, the data types also have methods and 
@@ -208,7 +147,7 @@ console.log('------ MORE Object examples - Objects/Functions ----------');
 
 // showing a function call and creating a method
 
-	
+
 
 /*
 	==================================================================
@@ -252,8 +191,7 @@ console.log('------------ DOCUMENT OBJECT MODEL -------------------');
 
 console.log('------------ getElementById -------------------');
 
-	var playBox = document.getElementById('playbox');
-	console.log(playBox);
+
 
 
 /*
@@ -267,10 +205,7 @@ console.log('------------ getElementById -------------------');
 console.log('------------ getElementsByTagName -------------------');
 
 
-	var anchors = document.getElementsByTagName('a');
-	console.log(anchors);
-	
-	console.log(anchors[1]);
+
 
 /*
 	==================================================================
@@ -285,9 +220,8 @@ console.log('------------ getElementsByTagName -------------------');
 
 console.log('------------ querySelectorAll -------------------');
 
-	var nav = document.querySelectorAll('#nav li');
-	console.log(nav);
-	
+
+
 
 /*
 	==================================================================
@@ -300,8 +234,7 @@ console.log('------------ querySelectorAll -------------------');
 */
     console.log('------------ querySelector -------------------');
 
-	var nav2 = document.querySelector('#nav');
-	console.log(nav2);
+
 
 
 
@@ -327,11 +260,7 @@ console.log('------------ querySelectorAll -------------------');
     console.log('------------ TRAVERSAL -------------------');
 
 
-	var apple = document.querySelectorAll("#nav li a")[2];
-		console.log(apple);
-		console.log(apple.parentNode);
-		console.log(apple.parentNode.parentNode);
-	
+
 
 /*
 	==================================================================
@@ -349,15 +278,7 @@ console.log('------------ querySelectorAll -------------------');
         attr = href, src, class
 */
 
-		var navLinks = document.querySelectorAll('#nav li');
-		for(var i = 0, max = navLinks.length; i < max	; i++)
-			{
-				var href = navLinks[i].firstChild.getAttribute('href');	
-				console.log("Manipluation", href);
-				
-				var aClass = navLinks[i].firstChild.getAttribute('class');
-				console.log('Manipluation class', aClass);
-			}
+
 
 /*
 	==================================================================
@@ -375,16 +296,7 @@ console.log('------------ querySelectorAll -------------------');
 
 console.log('------------ Manipulating CSS Classes -------------------');
 
-	navLinks[2].firstChild.setAttribute('class', 'navitem');
-	
-	var changeClass = navLinks[1].firstChild.setAttribute('href', 'http://google.com');
 
-console.log('------------ Manipulating CSS Classes -------------------');
-
-	var navLinks = document.querySelectorAll('#nav a');
-	console.log(navLinks[2]);
-	console.log(navLinks[2].innerHTML); //Getter
-	navLinks[2].innerHTML = "This link rocks";
 /*
 	==================================================================
 	Replacing an HTML container with new HTML
@@ -398,6 +310,6 @@ Sample Link: http://www.instructables.com/files/deriv/FJI/WGSW/FPIUQQ3K/FJIWGSWF
 
 
 
-
+/*
 
 })(); // end wrapper

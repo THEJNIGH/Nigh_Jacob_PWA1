@@ -1,4 +1,4 @@
- /*
+/*
     PWA1: Goal 4: Course Material 4
 
 	1. Objects
@@ -30,13 +30,7 @@ console.log('------Objects ----------');
 
 //{KEY : Value} pairings,
 
-	person = 
-		{
-			'name': "bond",
-			'age': 35,
-			'secretAgent': true	
-		};
-	
+
 
 /* accessing object properties
      - below are 3 ways you can access the property information in an object
@@ -47,22 +41,14 @@ console.log('------Objects ----------');
      - also keep in mind that since the keys can be strings, you could access the keys using string variables
  */
 
-	var personAge = 'age';
-	console.log(person.name, person[personAge], person['secretAgent']);
 
 // setter
 
-	person['age'] = '40';
-	person.name = 'James Bond';
-	person.height = 5;
-	
-	console.log(person);
+
 
 //nested objects
 
-	person = {birthday: {month: 12, day: 2}, name: 'Bond'};
-	console.log(person['birthday']['month']);
-	console.log(person.birthday.month, person.name);
+
 
 //---------------------------------------------
 
@@ -70,28 +56,7 @@ console.log('------Objects ----------');
 
 console.log('------Object within an object, Arrays, Function ----------');
 
-	var thatGuy = 
-		{
-			name: 'James Bond',
-			course: 'PWA1',
-			address: 
-			{
-				num: 3300,
-				street: 'University Blvd',
-				city: 'Orlando',
-				cornerOf: ['University', 'Semoran']
-				
-			},
-			
-			showMyAddress: function()
-				{
-					var x = this.address.street + ", " + this.address.city;
-					return x;	
-				}
-			
-		};
-		
-			console.log(thatGuy.showMyAddress());
+
 
 //properties & methods
 /*
@@ -105,18 +70,7 @@ console.log('------Objects - properties & methods ----------');
 
 //Method 1 "Basic"
 
-	var fsStudent = 	{}; //initialized variable
-	
-	fsStudent.age = 19; //set age property
-	fsStudent.career = 'web dev'; //set career property
-	
-	fsStudent.sayHello = function()//creates method say hello
-		{
-			console.log('Hello');	
-		};
-		
-		
-	
+
 
 
 // above, we first initialize the object, then we created 2 properties 
@@ -126,9 +80,66 @@ console.log('------Objects - properties & methods ----------');
 // we can also access the methods and properties of an object using  [ ] , 
 // 	by using their name as a string - all of the below are valid:
 
-	console.log('method 1');
-	
-		fsStudent.sayHello();	
+
+
+
+/* --------------
+Method 2 "OBJECT Literal"
+
+	- we can also use the object literal syntax to create a new object and 
+		fill it at the same time.
+
+	- below is the same object as in Method 1
+*/
+
+
+
+
+//---------------------------------------------
+
+
+/******************************************************************************
+STUDENT ACTIVITY 1:
+
+	PART 1:
+	1.  Create an object that has the following keys.
+         a. schoolName (i.e "Full Sail")
+         b. address  (i.e "123 University Ave")
+         c. studentCount (i.e 16000)
+         d. students (use an array of objects) - create at least 3 objects in the array)
+             i. name (i.e "James Bond")
+             ii. GPA (i.e 3.9)
+             iii. classes (use an array with the ability to store at least 2 class names)
+                    (i.e ['PWA1', 'PWA2'])
+
+        2.	console.log the following
+             a. school name in both the dot syntax and index syntax
+             b  create a variable name "newCnt" that is equal to studentCount, and console.log
+                    the studentCount using the newCnt variable.
+             c.  console.log the address using index syntax
+             d. one student's GPA using dot syntax and index syntax
+ ----------------------------------------------------------------------------- */
+
+console.log('------ STUDENT ACTIVITY - ANSWERS BELOW ----------');
+
+// this is integrating multiple data types - object with an array of objects
+
+
+
+/* ----------------------------------------------------------------------------
+ STUDENT ACTIVITY 2:
+
+    1.  Using the above code, create a function that will find the average grade
+        a. create an anonymous function named "gradeAvg"
+        b. the function should accept as a parameter the object above
+        c. create a for loop to total up the average grade for ALL students
+        d. "return" the average GPA answer to the item that called the function
+
+    2.  console.log the average grade by calling the gradeAvg method.
+----------------------------------------------------------------------------- */
+
+
+
 
 /* ===============================================================
 	The for-in object loop
@@ -140,18 +151,7 @@ console.log('------Objects - properties & methods ----------');
 */
     console.log("---------- Object - For In Loop ----------------");
 
-	var students = 
-		{
-			name: 'James Bond',
-			gender: 'Male',
-			job: 'spy'	
-		};
-		
-		for(var key in students)
-			{
-				console.log('Key names: ', key);
-				console.log('Value of key[' , key, ']: ', students[key]);	
-			}
+
 
 /*
 	===============================================
@@ -186,9 +186,7 @@ console.log('------Objects - properties & methods ----------');
 */
     console.log('------ Objects - Converting Datatypes ----------');
 
-	var myNum  = 1;
-		myString = String(myNum);
-		console.log(typeof myString);
+
 
 /*
 	- because these values act as objects, the data types also have methods and 
@@ -200,15 +198,17 @@ console.log('------Objects - properties & methods ----------');
 // #1 - shows string length
 
 
+// #2 - shows array length
 	
 
+// #3 - shows and array of objects, inside of an object length
 	
 
 console.log('------ MORE Object examples - Objects/Functions ----------');
 
 // showing a function call and creating a method
 
-	
+
 
 /*
 	==================================================================
@@ -252,8 +252,7 @@ console.log('------------ DOCUMENT OBJECT MODEL -------------------');
 
 console.log('------------ getElementById -------------------');
 
-	var playBox = document.getElementById('playbox');
-	console.log(playBox);
+
 
 
 /*
@@ -267,10 +266,7 @@ console.log('------------ getElementById -------------------');
 console.log('------------ getElementsByTagName -------------------');
 
 
-	var anchors = document.getElementsByTagName('a');
-	console.log(anchors);
-	
-	console.log(anchors[1]);
+
 
 /*
 	==================================================================
@@ -285,9 +281,8 @@ console.log('------------ getElementsByTagName -------------------');
 
 console.log('------------ querySelectorAll -------------------');
 
-	var nav = document.querySelectorAll('#nav li');
-	console.log(nav);
-	
+
+
 
 /*
 	==================================================================
@@ -300,8 +295,7 @@ console.log('------------ querySelectorAll -------------------');
 */
     console.log('------------ querySelector -------------------');
 
-	var nav2 = document.querySelector('#nav');
-	console.log(nav2);
+
 
 
 
@@ -327,11 +321,7 @@ console.log('------------ querySelectorAll -------------------');
     console.log('------------ TRAVERSAL -------------------');
 
 
-	var apple = document.querySelectorAll("#nav li a")[2];
-		console.log(apple);
-		console.log(apple.parentNode);
-		console.log(apple.parentNode.parentNode);
-	
+
 
 /*
 	==================================================================
@@ -349,15 +339,7 @@ console.log('------------ querySelectorAll -------------------');
         attr = href, src, class
 */
 
-		var navLinks = document.querySelectorAll('#nav li');
-		for(var i = 0, max = navLinks.length; i < max	; i++)
-			{
-				var href = navLinks[i].firstChild.getAttribute('href');	
-				console.log("Manipluation", href);
-				
-				var aClass = navLinks[i].firstChild.getAttribute('class');
-				console.log('Manipluation class', aClass);
-			}
+
 
 /*
 	==================================================================
@@ -375,16 +357,7 @@ console.log('------------ querySelectorAll -------------------');
 
 console.log('------------ Manipulating CSS Classes -------------------');
 
-	navLinks[2].firstChild.setAttribute('class', 'navitem');
-	
-	var changeClass = navLinks[1].firstChild.setAttribute('href', 'http://google.com');
 
-console.log('------------ Manipulating CSS Classes -------------------');
-
-	var navLinks = document.querySelectorAll('#nav a');
-	console.log(navLinks[2]);
-	console.log(navLinks[2].innerHTML); //Getter
-	navLinks[2].innerHTML = "This link rocks";
 /*
 	==================================================================
 	Replacing an HTML container with new HTML
@@ -398,6 +371,95 @@ Sample Link: http://www.instructables.com/files/deriv/FJI/WGSW/FPIUQQ3K/FJIWGSWF
 
 
 
+/*
+	==================================================================
+	DOM Events  (lecture slides)
+	------------------------------------------------------------------
+		- listener and handler
+		- there are 2 key aspects to any event, the event listener and the event handler
+			1. the event listener is an property associated with the DOM that waits for the event trigger to 
+				occur (i.e click, mouseover), and then fires the event handler
+			2. the event handler is the function that will execute when the event is fired
+
+		- using dot syntax, the listener for any element is available as a property 
+
+		- An event listener is all lowercase with the prefix "on"
+		
+			element.onclick		//click listener
+			element.onmousemove			//mousemove listener
+	
+
+		- The function is the event handler.  Can be anonymous or named.
+
+			elementObj.onclick = myFn;
+			element.onclick = function(){};
+
+		- every event listener automatically passes an "event" object with information about the event  
+		- the function's only argument is the EVENT OBJECT (e)
+		- the handler must receive it as an argument
+		- many developers will use the "e" as the function parameter
+		- The function's CONTEXT (this) is the html element.	
+*/
+console.log('------------ DOM Events Ex 1-------------------');
+
+var nav = document.querySelectorAll('#nav li a');
+
+
+/*
+// this just console.log's when a click occurs
+
+
+
+
+
+*/
+
+
+/*
+	==================================================================
+	Browser Defaults
+	------------------------------------------------------------------
+		- for most events, the browser will trigger a default action -  for example, hovering over 
+			any element will create a tooltip out of the “title” or “alt” attribute if it exists
+
+		- the one we care the most about is the <a> default action, which tells the window to go to 
+			the anchor’s href location
+
+		- the window waits for a return to take place before calling the default
+			- so our event function should always return false , and call preventDefault()
+
+		e.stopPropagation();  - calling this method from inside an event handler will prevent the 
+								Bubbling Phase from triggering other events
+
+		e.preventDefault();	  - calling this method from inside an event handler will prevent the 
+								browser’s default action (such as following an href or the <form> action)
+								- Prevent a submit button from submitting a form
+   								- Prevent a link from following the URL
+					
+
+*/
+
+
+console.log('------------ DOM Events Ex 2 -------------------');
+/*
+// this example changes the clicked link to the active class
+
+
+
+
+*/ 
+
+
+
+console.log('------------ DOM Events Ex 3 -------------------');
+/*
+// a more efficient way to do the above
+
+
+
+
+
+*/
 
 
 })(); // end wrapper
