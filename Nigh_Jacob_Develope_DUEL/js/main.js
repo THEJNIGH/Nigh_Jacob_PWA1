@@ -15,8 +15,24 @@
 
     console.log("FIGHT!!!"); //Console logging the phrase fight
 	
-	var playerOne = ["Spiderman", 20, 100]; //Created an array holding all of player ones data.
-	var playerTwo = ["Batman", 20, 100]; //Created an array holding all if player twos data. 
+	//var playerOne = ["Spiderman", 20, 100]; //Created an array holding all of player ones data.
+	//var playerTwo = ["Batman", 20, 100]; //Created an array holding all if player twos data. 
+	
+	var playerOne = {
+		name: 'Spiderman',
+		damage: 20,
+		health: 100	
+		
+	};
+	
+	var playerTwo = {
+		name: 'Batman',
+		damage: 20,
+		health: 100	
+		
+	};
+	
+	
 
 	/*
     //player name
@@ -35,21 +51,29 @@
     //initiate round 
     var round = 0;
 
+	var events = {
+		button: document.getTagByClass('buttonblue')
+			
+	};
+
+
     function fight(){
-        alert(playerOne[0] + ":" + playerOne[2] + "  *START*  " + playerTwo[0] + ":" + playerTwo[2]); // Function to alert  players ones health and name and also start in the middle as well as player twos health and name on the other side of start
+		
+		
+       // alert(playerOne[0] + ":" + playerOne[2] + "  *START*  " + playerTwo[0] + ":" + playerTwo[2]); // Function to alert  players ones health and name and also start in the middle as well as player twos health and name on the other side of start
         for (var i = 0; i < 10; i++) //for loop if i is equal to 0 and i is less than 10 keep adding
         {
             //random formula is - Math.floor(Math.random() * (max - min) + min);
             var minDamage1 = playerOne[1] * .5; // declaring variable of player ones damage times .5
             var minDamage2 = playerTwo[1] * .5; // declaring variable of player twos damage times .5
-            var f1 = Math.floor(Math.random()*(playerOne[1] - minDamage1) + minDamage1); // declaring variable to get random damage of player one
-            var f2 = Math.floor(Math.random()*(playerTwo[1] - minDamage2) + minDamage2); // declaring variable to get random damage of player two
+            var f1 = Math.floor(Math.random()*(playerOne.damage - minDamage1) + minDamage1); // declaring variable to get random damage of player one
+            var f2 = Math.floor(Math.random()*(playerTwo.damage - minDamage2) + minDamage2); // declaring variable to get random damage of player two
 
             //inflict damage
-            playerOne[2] -= f1; // player ones health minus equals to variable f1
-            playerTwo[2] -= f2; // player twos health minus equals to variable f2
+            playerOne.health -= f1; // player ones health minus equals to variable f1
+            playerTwo.health -= f2; // player twos health minus equals to variable f2
 
-            console.log(playerOne[0] + ": " + playerOne[2] + " " + playerTwo[0] + ":" + playerTwo[2]); // console logs players health after round 1 
+            console.log(playerOne.name + ": " + playerOne.health + " " + playerTwo.name + ":" + playerTwo.health); // console logs players health after round 1 
 
             //check for victor
             var result = winnerCheck(); // anonymous function to check for the winner
@@ -57,7 +81,7 @@
             if (result === "no winner") //if statement say that if there is no winner then it adds another around and they go again
             {
                 round++; // round goes up one
-                alert(playerOne[0] + ":" + playerOne[2] + "  *ROUND " + round + " OVER" + "*  " + playerTwo[0] + ":" + playerTwo[2]); //alert stating both players health and name
+                alert(playerOne.name + ":" + playerOne.health + "  *ROUND " + round + " OVER" + "*  " + playerTwo.name + ":" + playerTwo.health); //alert stating both players health and name
 
             } else{
                 alert(result); //else alerts the results of the winner
@@ -69,14 +93,14 @@
 
     function winnerCheck(){ //if no winner then they both died and no one wins
         var result = "no winner";
-        if (playerOne[2] < 1 && playerTwo[2] < 1)
+        if (playerOne.health < 1 && playerTwo.health < 1)
         {
             result = "You Both Die";
-        } else if(playerOne[2] < 1){ //if not player one wins
-            result = playerTwo[0] + " WINS!!!"
-        } else if (playerTwo[2] < 1) // if not player two wins
+        } else if(playerOne.health < 1){ //if not player one wins
+            result = playerTwo.name + " WINS!!!"
+        } else if (playerTwo.health < 1) // if not player two wins
         {
-            result = playerOne[0] + " WINS!!!"
+            result = playerOne.name + " WINS!!!"
         };
        return result; // log results
     };
